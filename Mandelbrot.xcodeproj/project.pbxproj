@@ -7,23 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		834DBC2F228A1DA7008CCB51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834DBC2E228A1DA7008CCB51 /* AppDelegate.swift */; };
+		834DBC31228A1DA7008CCB51 /* MandelbrotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834DBC30228A1DA7008CCB51 /* MandelbrotViewController.swift */; };
+		834DBC34228A1DA7008CCB51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834DBC32228A1DA7008CCB51 /* Main.storyboard */; };
+		834DBC36228A1DA9008CCB51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834DBC35228A1DA9008CCB51 /* Assets.xcassets */; };
+		834DBC39228A1DA9008CCB51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834DBC37228A1DA9008CCB51 /* LaunchScreen.storyboard */; };
+		834DBC40228A1E70008CCB51 /* Mandelbrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B972289E64600B62BE7 /* Mandelbrot.swift */; };
+		834DBC41228A1E76008CCB51 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B932289E52D00B62BE7 /* Complex.swift */; };
+		834DBC42228A1E79008CCB51 /* RGBA32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B952289E5E100B62BE7 /* RGBA32.swift */; };
 		83DD7B842289E51B00B62BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B832289E51B00B62BE7 /* AppDelegate.swift */; };
-		83DD7B862289E51B00B62BE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B852289E51B00B62BE7 /* ViewController.swift */; };
+		83DD7B862289E51B00B62BE7 /* MandelbrotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B852289E51B00B62BE7 /* MandelbrotViewController.swift */; };
 		83DD7B882289E51B00B62BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DD7B872289E51B00B62BE7 /* Assets.xcassets */; };
 		83DD7B8B2289E51B00B62BE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DD7B892289E51B00B62BE7 /* Main.storyboard */; };
+		83DD7B942289E52D00B62BE7 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B932289E52D00B62BE7 /* Complex.swift */; };
+		83DD7B962289E5E100B62BE7 /* RGBA32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B952289E5E100B62BE7 /* RGBA32.swift */; };
+		83DD7B982289E64600B62BE7 /* Mandelbrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B972289E64600B62BE7 /* Mandelbrot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		83DD7B802289E51B00B62BE7 /* Mandelbrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mandelbrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		834DBC2C228A1DA7008CCB51 /* MobileMandelbrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMandelbrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		834DBC2E228A1DA7008CCB51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		834DBC30228A1DA7008CCB51 /* MandelbrotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelbrotViewController.swift; sourceTree = "<group>"; };
+		834DBC33228A1DA7008CCB51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		834DBC35228A1DA9008CCB51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		834DBC38228A1DA9008CCB51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		834DBC3A228A1DA9008CCB51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83A3C8E0228A234800045A6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		83DD7B802289E51B00B62BE7 /* MacMandelbrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacMandelbrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DD7B832289E51B00B62BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		83DD7B852289E51B00B62BE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83DD7B852289E51B00B62BE7 /* MandelbrotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelbrotViewController.swift; sourceTree = "<group>"; };
 		83DD7B872289E51B00B62BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83DD7B8A2289E51B00B62BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83DD7B8C2289E51B00B62BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DD7B8D2289E51B00B62BE7 /* Mandelbrot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mandelbrot.entitlements; sourceTree = "<group>"; };
+		83DD7B932289E52D00B62BE7 /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+		83DD7B952289E5E100B62BE7 /* RGBA32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBA32.swift; sourceTree = "<group>"; };
+		83DD7B972289E64600B62BE7 /* Mandelbrot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandelbrot.swift; sourceTree = "<group>"; };
+		83FF632B228C985B00A81189 /* ScreenSnapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenSnapshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		834DBC29228A1DA7008CCB51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83DD7B7D2289E51B00B62BE7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,10 +64,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		834DBC2D228A1DA7008CCB51 /* MobileMandelbrot */ = {
+			isa = PBXGroup;
+			children = (
+				834DBC3E228A1DED008CCB51 /* Support files */,
+				83988576228A376C00A39AC4 /* View */,
+			);
+			path = MobileMandelbrot;
+			sourceTree = "<group>";
+		};
+		834DBC3E228A1DED008CCB51 /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				834DBC2E228A1DA7008CCB51 /* AppDelegate.swift */,
+				834DBC32228A1DA7008CCB51 /* Main.storyboard */,
+				834DBC35228A1DA9008CCB51 /* Assets.xcassets */,
+				834DBC37228A1DA9008CCB51 /* LaunchScreen.storyboard */,
+				834DBC3A228A1DA9008CCB51 /* Info.plist */,
+				83FF632B228C985B00A81189 /* ScreenSnapshot.png */,
+			);
+			name = "Support files";
+			sourceTree = "<group>";
+		};
+		834DBC43228A20F5008CCB51 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				83DD7B9D2289FC1600B62BE7 /* Services */,
+				83DD7B9B2289FBCE00B62BE7 /* Model */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		83988576228A376C00A39AC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				834DBC30228A1DA7008CCB51 /* MandelbrotViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		83DD7B772289E51B00B62BE7 = {
 			isa = PBXGroup;
 			children = (
-				83DD7B822289E51B00B62BE7 /* Mandelbrot */,
+				83A3C8E0228A234800045A6F /* README.md */,
+				834DBC43228A20F5008CCB51 /* Common */,
+				83DD7B822289E51B00B62BE7 /* MacMandelbrot */,
+				834DBC2D228A1DA7008CCB51 /* MobileMandelbrot */,
 				83DD7B812289E51B00B62BE7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,30 +117,81 @@
 		83DD7B812289E51B00B62BE7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83DD7B802289E51B00B62BE7 /* Mandelbrot.app */,
+				83DD7B802289E51B00B62BE7 /* MacMandelbrot.app */,
+				834DBC2C228A1DA7008CCB51 /* MobileMandelbrot.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		83DD7B822289E51B00B62BE7 /* Mandelbrot */ = {
+		83DD7B822289E51B00B62BE7 /* MacMandelbrot */ = {
+			isa = PBXGroup;
+			children = (
+				83DD7B9C2289FBEF00B62BE7 /* Support files */,
+				83DD7B9A2289FBC000B62BE7 /* View */,
+			);
+			path = MacMandelbrot;
+			sourceTree = "<group>";
+		};
+		83DD7B9A2289FBC000B62BE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83DD7B852289E51B00B62BE7 /* MandelbrotViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83DD7B9B2289FBCE00B62BE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83DD7B932289E52D00B62BE7 /* Complex.swift */,
+				83DD7B952289E5E100B62BE7 /* RGBA32.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83DD7B9C2289FBEF00B62BE7 /* Support files */ = {
 			isa = PBXGroup;
 			children = (
 				83DD7B832289E51B00B62BE7 /* AppDelegate.swift */,
-				83DD7B852289E51B00B62BE7 /* ViewController.swift */,
 				83DD7B872289E51B00B62BE7 /* Assets.xcassets */,
 				83DD7B892289E51B00B62BE7 /* Main.storyboard */,
 				83DD7B8C2289E51B00B62BE7 /* Info.plist */,
 				83DD7B8D2289E51B00B62BE7 /* Mandelbrot.entitlements */,
 			);
-			path = Mandelbrot;
+			name = "Support files";
+			sourceTree = "<group>";
+		};
+		83DD7B9D2289FC1600B62BE7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				83DD7B972289E64600B62BE7 /* Mandelbrot.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		83DD7B7F2289E51B00B62BE7 /* Mandelbrot */ = {
+		834DBC2B228A1DA7008CCB51 /* MobileMandelbrot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83DD7B902289E51B00B62BE7 /* Build configuration list for PBXNativeTarget "Mandelbrot" */;
+			buildConfigurationList = 834DBC3B228A1DA9008CCB51 /* Build configuration list for PBXNativeTarget "MobileMandelbrot" */;
+			buildPhases = (
+				834DBC28228A1DA7008CCB51 /* Sources */,
+				834DBC29228A1DA7008CCB51 /* Frameworks */,
+				834DBC2A228A1DA7008CCB51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobileMandelbrot;
+			productName = MobileMandelbrot;
+			productReference = 834DBC2C228A1DA7008CCB51 /* MobileMandelbrot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83DD7B7F2289E51B00B62BE7 /* MacMandelbrot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83DD7B902289E51B00B62BE7 /* Build configuration list for PBXNativeTarget "MacMandelbrot" */;
 			buildPhases = (
 				83DD7B7C2289E51B00B62BE7 /* Sources */,
 				83DD7B7D2289E51B00B62BE7 /* Frameworks */,
@@ -78,9 +201,9 @@
 			);
 			dependencies = (
 			);
-			name = Mandelbrot;
+			name = MacMandelbrot;
 			productName = Mandelbrot;
-			productReference = 83DD7B802289E51B00B62BE7 /* Mandelbrot.app */;
+			productReference = 83DD7B802289E51B00B62BE7 /* MacMandelbrot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -93,6 +216,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Robert Ryan";
 				TargetAttributes = {
+					834DBC2B228A1DA7008CCB51 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					83DD7B7F2289E51B00B62BE7 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -111,12 +237,23 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				83DD7B7F2289E51B00B62BE7 /* Mandelbrot */,
+				83DD7B7F2289E51B00B62BE7 /* MacMandelbrot */,
+				834DBC2B228A1DA7008CCB51 /* MobileMandelbrot */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		834DBC2A228A1DA7008CCB51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834DBC39228A1DA9008CCB51 /* LaunchScreen.storyboard in Resources */,
+				834DBC36228A1DA9008CCB51 /* Assets.xcassets in Resources */,
+				834DBC34228A1DA7008CCB51 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83DD7B7E2289E51B00B62BE7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,18 +266,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		834DBC28228A1DA7008CCB51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834DBC41228A1E76008CCB51 /* Complex.swift in Sources */,
+				834DBC42228A1E79008CCB51 /* RGBA32.swift in Sources */,
+				834DBC31228A1DA7008CCB51 /* MandelbrotViewController.swift in Sources */,
+				834DBC2F228A1DA7008CCB51 /* AppDelegate.swift in Sources */,
+				834DBC40228A1E70008CCB51 /* Mandelbrot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83DD7B7C2289E51B00B62BE7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83DD7B862289E51B00B62BE7 /* ViewController.swift in Sources */,
+				83DD7B962289E5E100B62BE7 /* RGBA32.swift in Sources */,
+				83DD7B862289E51B00B62BE7 /* MandelbrotViewController.swift in Sources */,
+				83DD7B942289E52D00B62BE7 /* Complex.swift in Sources */,
 				83DD7B842289E51B00B62BE7 /* AppDelegate.swift in Sources */,
+				83DD7B982289E64600B62BE7 /* Mandelbrot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		834DBC32228A1DA7008CCB51 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834DBC33228A1DA7008CCB51 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		834DBC37228A1DA9008CCB51 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834DBC38228A1DA9008CCB51 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		83DD7B892289E51B00B62BE7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -152,6 +320,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		834DBC3C228A1DA9008CCB51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ8TLN3UQR;
+				INFOPLIST_FILE = MobileMandelbrot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertmryan.MobileMandelbrot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		834DBC3D228A1DA9008CCB51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ8TLN3UQR;
+				INFOPLIST_FILE = MobileMandelbrot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertmryan.MobileMandelbrot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		83DD7B8E2289E51B00B62BE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -271,10 +482,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Mandelbrot/Mandelbrot.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MacMandelbrot/Mandelbrot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Mandelbrot/Info.plist;
+				INFOPLIST_FILE = MacMandelbrot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -289,10 +500,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Mandelbrot/Mandelbrot.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MacMandelbrot/Mandelbrot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Mandelbrot/Info.plist;
+				INFOPLIST_FILE = MacMandelbrot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -306,6 +517,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		834DBC3B228A1DA9008CCB51 /* Build configuration list for PBXNativeTarget "MobileMandelbrot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				834DBC3C228A1DA9008CCB51 /* Debug */,
+				834DBC3D228A1DA9008CCB51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		83DD7B7B2289E51B00B62BE7 /* Build configuration list for PBXProject "Mandelbrot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -315,7 +535,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83DD7B902289E51B00B62BE7 /* Build configuration list for PBXNativeTarget "Mandelbrot" */ = {
+		83DD7B902289E51B00B62BE7 /* Build configuration list for PBXNativeTarget "MacMandelbrot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83DD7B912289E51B00B62BE7 /* Debug */,

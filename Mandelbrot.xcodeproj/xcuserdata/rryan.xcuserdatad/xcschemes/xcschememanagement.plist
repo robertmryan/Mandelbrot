@@ -4,10 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Mandelbrot.xcscheme_^#shared#^_</key>
+		<key>MacMandelbrot.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>MobileMandelbrot.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>834DBC2B228A1DA7008CCB51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83DD7B7F2289E51B00B62BE7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

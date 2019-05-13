@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mandelbrot View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MandelbrotViewController" customModule="MobileMandelbrot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7dv-Ob-l1p">
+                                <rect key="frame" x="20" y="44" width="374" height="2"/>
+                            </progressView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ryJ-ys-Mle">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="9hO-o3-yaK">
+                                <rect key="frame" x="87" y="54" width="240" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teG-qF-hg2">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                        <state key="normal" title="Multithreaded"/>
+                                        <connections>
+                                            <action selector="didTapMultithreadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Di6-wv-qPI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9J-ya-EUY">
+                                        <rect key="frame" x="129" y="0.0" width="111" height="30"/>
+                                        <state key="normal" title="Single-threaded"/>
+                                        <connections>
+                                            <action selector="didTapSingleThreadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xyG-We-d0F"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ryJ-ys-Mle" secondAttribute="trailing" id="E93-KP-H0I"/>
+                            <constraint firstItem="ryJ-ys-Mle" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JGz-we-Euy"/>
+                            <constraint firstItem="9hO-o3-yaK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RRg-Vb-hGk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ryJ-ys-Mle" secondAttribute="bottom" id="XAg-6s-AzY"/>
+                            <constraint firstItem="7dv-Ob-l1p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dZd-bH-FtO"/>
+                            <constraint firstItem="7dv-Ob-l1p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iHV-9a-4wA"/>
+                            <constraint firstItem="ryJ-ys-Mle" firstAttribute="top" secondItem="9hO-o3-yaK" secondAttribute="bottom" constant="8" id="k4w-AU-8r2"/>
+                            <constraint firstItem="9hO-o3-yaK" firstAttribute="top" secondItem="7dv-Ob-l1p" secondAttribute="bottom" constant="8" id="s5O-3m-xDt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7dv-Ob-l1p" secondAttribute="trailing" id="uFw-rP-VLr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="calculateMultiThreadButton" destination="teG-qF-hg2" id="brP-CP-Q8Q"/>
+                        <outlet property="calculateSingleThreadButton" destination="n9J-ya-EUY" id="oKc-LU-TEQ"/>
+                        <outlet property="imageView" destination="ryJ-ys-Mle" id="xw1-UH-xnt"/>
+                        <outlet property="progressIndicator" destination="7dv-Ob-l1p" id="6QR-vf-SPn"/>
+                        <outletCollection property="buttons" destination="teG-qF-hg2" collectionClass="NSMutableArray" id="QEU-Fv-dWb"/>
+                        <outletCollection property="buttons" destination="n9J-ya-EUY" collectionClass="NSMutableArray" id="p6d-CA-sfb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -28,10 +28,18 @@ final class Mandelbrot {
     func calculate(_ upperLeft: Complex, _ lowerRight: Complex, _ pixelBuffer: UnsafeMutablePointer<RGBA32>, _ size: CGSize, _ dispatchSource: DispatchSourceUserDataAdd? = nil, completion: @escaping () -> Void) {
         let rows = Int(size.height)
         let columns = Int(size.width)
+        let pixels = rows * columns
+
+        nonisolated(unsafe) let pixelBuffer = pixelBuffer
+
         DispatchQueue.global(qos: .utility).async {
-            DispatchQueue.concurrentPerform(iterations: rows) { row in
+            DispatchQueue.chunkedConcurrentPerform(
+                iterations: pixels,
+                chunks: ProcessInfo.processInfo.activeProcessorCount * 8
+            ) { range in
+                for index in range {
+                    let (row, column) = index.quotientAndRemainder(dividingBy: columns)
                 let imaginary = self.imaginary(for: row, of: rows, between: upperLeft, and: lowerRight)
-                for column in 0 ..< columns {
                     let real = self.real(for: column, of: columns, between: upperLeft, and: lowerRight)
                     let complex = Complex(real: real, imaginary: imaginary)
                     let value = self.value(for: complex)

@@ -22,6 +22,8 @@
 		83DD7B942289E52D00B62BE7 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B932289E52D00B62BE7 /* Complex.swift */; };
 		83DD7B962289E5E100B62BE7 /* RGBA32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B952289E5E100B62BE7 /* RGBA32.swift */; };
 		83DD7B982289E64600B62BE7 /* Mandelbrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD7B972289E64600B62BE7 /* Mandelbrot.swift */; };
+		C41544CD2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41544CC2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift */; };
+		C41544CE2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41544CC2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,7 @@
 		83DD7B952289E5E100B62BE7 /* RGBA32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBA32.swift; sourceTree = "<group>"; };
 		83DD7B972289E64600B62BE7 /* Mandelbrot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mandelbrot.swift; sourceTree = "<group>"; };
 		83FF632B228C985B00A81189 /* ScreenSnapshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenSnapshot.png; sourceTree = "<group>"; };
+		C41544CC2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Chunked.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				83DD7B972289E64600B62BE7 /* Mandelbrot.swift */,
+				C41544CC2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -272,6 +276,7 @@
 			files = (
 				834DBC41228A1E76008CCB51 /* Complex.swift in Sources */,
 				834DBC42228A1E79008CCB51 /* RGBA32.swift in Sources */,
+				C41544CD2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift in Sources */,
 				834DBC31228A1DA7008CCB51 /* MandelbrotViewController.swift in Sources */,
 				834DBC2F228A1DA7008CCB51 /* AppDelegate.swift in Sources */,
 				834DBC40228A1E70008CCB51 /* Mandelbrot.swift in Sources */,
@@ -284,6 +289,7 @@
 			files = (
 				83DD7B962289E5E100B62BE7 /* RGBA32.swift in Sources */,
 				83DD7B862289E51B00B62BE7 /* MandelbrotViewController.swift in Sources */,
+				C41544CE2C8249CF003AD2C9 /* DispatchQueue+Chunked.swift in Sources */,
 				83DD7B942289E52D00B62BE7 /* Complex.swift in Sources */,
 				83DD7B842289E51B00B62BE7 /* AppDelegate.swift in Sources */,
 				83DD7B982289E64600B62BE7 /* Mandelbrot.swift in Sources */,
@@ -492,6 +498,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robertmryan.Mandelbrot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -510,6 +517,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robertmryan.Mandelbrot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

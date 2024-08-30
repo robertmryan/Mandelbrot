@@ -7,10 +7,10 @@
 //
 // swiftlint:disable identifier_name
 
-import Foundation
+@preconcurrency import Foundation
 import CoreGraphics
 
-final class Mandelbrot {
+final class Mandelbrot: Sendable {
 
     let maxIterations = 10_000
     let threshold = 2.0
@@ -25,7 +25,14 @@ final class Mandelbrot {
     ///   - dispatchSource: The `DispatchSourceUserDataAdd` updated every time a pixel is calculated.
     ///   - completion: A block that is called when the calculation is done.
 
-    func calculate(_ upperLeft: Complex, _ lowerRight: Complex, _ pixelBuffer: UnsafeMutablePointer<RGBA32>, _ size: CGSize, _ dispatchSource: DispatchSourceUserDataAdd? = nil, completion: @escaping () -> Void) {
+    func calculate(
+        _ upperLeft: Complex,
+        _ lowerRight: Complex,
+        _ pixelBuffer: UnsafeMutablePointer<RGBA32>,
+        _ size: CGSize,
+        _ dispatchSource: DispatchSourceUserDataAdd? = nil,
+        completion: @Sendable @MainActor @escaping () -> Void
+    ) {
         let rows = Int(size.height)
         let columns = Int(size.width)
         let pixels = rows * columns
@@ -64,9 +71,18 @@ final class Mandelbrot {
     ///   - dispatchSource: The `DispatchSourceUserDataAdd` updated every time a pixel is calculated.
     ///   - completion: A block that is called when the calculation is done.
 
-    func calculateSingleThreaded(_ upperLeft: Complex, _ lowerRight: Complex, _ pixelBuffer: UnsafeMutablePointer<RGBA32>, _ size: CGSize, _ dispatchSource: DispatchSourceUserDataAdd? = nil, completion: @escaping () -> Void) {
+    func calculateSingleThreaded(
+        _ upperLeft: Complex,
+        _ lowerRight: Complex,
+        _ pixelBuffer: UnsafeMutablePointer<RGBA32>,
+        _ size: CGSize,
+        _ dispatchSource: DispatchSourceUserDataAdd? = nil,
+        completion: @Sendable @MainActor @escaping () -> Void
+    ) {
         let rows = Int(size.height)
         let columns = Int(size.width)
+        nonisolated(unsafe) let pixelBuffer = pixelBuffer
+
         DispatchQueue.global(qos: .utility).async {
             for row in 0..<rows {
                 let imaginary = self.imaginary(for: row, of: rows, between: upperLeft, and: lowerRight)
@@ -93,7 +109,7 @@ private extension Mandelbrot {
     ///
     /// - returns: The number of iterations for `z = z^2 + c` to escape `threshold`.
 
-    func value(for complexValue: Complex) -> Int? {
+    nonisolated func value(for complexValue: Complex) -> Int? {
         var z = Complex(0)
         var iteration = 0
 
@@ -113,7 +129,7 @@ private extension Mandelbrot {
     ///
     /// - returns: A `RGBA32` color.
 
-    func color(for mandelbrotValue: Int?) -> RGBA32 {
+    nonisolated func color(for mandelbrotValue: Int?) -> RGBA32 {
         guard let mandelbrotValue = mandelbrotValue else {
             return RGBA32.blackColor
         }

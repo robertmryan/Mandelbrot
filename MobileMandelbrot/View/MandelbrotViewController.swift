@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import os.log
 
 class MandelbrotViewController: UIViewController {
+    let poi = OSSignposter(subsystem: Bundle.main.bundleIdentifier!, category: .pointsOfInterest)
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var progressIndicator: UIProgressView!
@@ -33,24 +35,26 @@ class MandelbrotViewController: UIViewController {
 }
 
 private extension MandelbrotViewController {
-    func calculate(multithreaded: Bool, completion: @escaping (Double) -> Void) {
+    func calculate(multithreaded: Bool, completion: @Sendable @MainActor @escaping (Duration) -> Void) {
         let scale: CGFloat = UIScreen.main.scale
         let size = imageView.bounds.size
         imageView.image = nil
 
-        let start = CACurrentMediaTime()
+        let start = ContinuousClock.now
 
         let realMinimum = -2.1
         let realMaximum = 0.6
         let imaginaryRange = (realMaximum - realMinimum) * Double(view.bounds.height / view.bounds.width)
-        mandelbrot(multithreaded: multithreaded,
+        mandelbrot(
+            multithreaded: multithreaded,
                    size: size,
                    scale: scale,
                    upperLeft: Complex(real: realMinimum, imaginary: imaginaryRange / 2),
-                   lowerRight: Complex(real: realMaximum, imaginary: -imaginaryRange / 2)) { image in
+            lowerRight: Complex(real: realMaximum, imaginary: -imaginaryRange / 2)
+        ) { image in
                     self.imageView.image = image
-                    let elapsed = CACurrentMediaTime() - start
-                    self.alert("Took \(elapsed) seconds")
+            let elapsed = start.duration(to: .now)
+            self.alert("Completed in \(elapsed).")
                     completion(elapsed)
         }
     }
@@ -72,7 +76,7 @@ private extension MandelbrotViewController {
     /// - parameter lowerRight:  The `Complex` number representing the lower right corner of the image.
     /// - parameter completion:  Completion handler for returning the resulting image.
 
-    func mandelbrot(multithreaded: Bool, size: CGSize, scale: CGFloat, upperLeft: Complex, lowerRight: Complex, completion: @escaping (UIImage?) -> Void) {
+    func mandelbrot(multithreaded: Bool, size: CGSize, scale: CGFloat, upperLeft: Complex, lowerRight: Complex, completion: @Sendable @MainActor @escaping (UIImage?) -> Void) {
         // create graphics context and grab the pixel buffer
 
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -98,19 +102,20 @@ private extension MandelbrotViewController {
 
         // start calculation
         //
-        // The kdebug signposts are in case you want to use "Points of Interest" tool in Instruments.
+        // The `OSLogger` signposts are in case you want to use "Points of Interest" tool in Instruments.
 
-        kdebug_signpost_start(0, 0, 0, 0, 0)
+        let state = poi.beginInterval(#function, "\(multithreaded ? "Multi-threaded" : "Single-threaded")")
 
         let mandelbrot = Mandelbrot()
 
-        var calculation = mandelbrot.calculateSingleThreaded
-        if multithreaded {
-            calculation = mandelbrot.calculate
+        let calculation = if multithreaded {
+            mandelbrot.calculate
+        } else {
+            mandelbrot.calculateSingleThreaded
         }
 
         calculation(upperLeft, lowerRight, pixelBuffer, imageSize, source) {
-            kdebug_signpost_end(0, 0, 0, 0, 0)
+            self.poi.endInterval(#function, state)
 
             guard let outputCGImage = context.makeImage() else {
                 completion(nil)

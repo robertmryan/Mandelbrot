@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23091" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23091"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -710,14 +711,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <progressIndicator wantsLayer="YES" verticalHuggingPriority="1000" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="INw-Gt-oXG">
-                                <rect key="frame" x="0.0" y="867" width="1005" height="20"/>
+                                <rect key="frame" x="10" y="867" width="985" height="20"/>
                             </progressIndicator>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="55" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="1000" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afu-gB-TxR">
-                                <rect key="frame" x="356" y="837" width="294" height="21"/>
+                                <rect key="frame" x="361" y="838" width="284" height="20"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Sd-It-aAe">
-                                        <rect key="frame" x="-6" y="-7" width="125" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Multithreaded" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ddr-0b-FRO">
+                                        <rect key="frame" x="-7" y="-7" width="125" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Multi-threaded" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ddr-0b-FRO">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -726,7 +727,7 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bNJ-SF-rSW">
-                                        <rect key="frame" x="162" y="-7" width="138" height="32"/>
+                                        <rect key="frame" x="159" y="-7" width="132" height="32"/>
                                         <buttonCell key="cell" type="push" title="Single-threaded" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tUB-oe-hqr">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -746,7 +747,7 @@
                                 </customSpacing>
                             </stackView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vd2-Us-kTb">
-                                <rect key="frame" x="0.0" y="0.0" width="1005" height="827"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1005" height="828"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Y9O-nP-VBv"/>
                             </imageView>
                         </subviews>
@@ -756,9 +757,9 @@
                             <constraint firstItem="afu-gB-TxR" firstAttribute="top" secondItem="INw-Gt-oXG" secondAttribute="bottom" constant="10" id="I1y-RT-OFd"/>
                             <constraint firstItem="Vd2-Us-kTb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="LuR-ys-6zh"/>
                             <constraint firstItem="INw-Gt-oXG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Vkz-LJ-fFo"/>
-                            <constraint firstAttribute="trailing" secondItem="INw-Gt-oXG" secondAttribute="trailing" id="XgN-R3-5sQ"/>
+                            <constraint firstAttribute="trailing" secondItem="INw-Gt-oXG" secondAttribute="trailing" constant="10" id="XgN-R3-5sQ"/>
                             <constraint firstItem="Vd2-Us-kTb" firstAttribute="top" secondItem="afu-gB-TxR" secondAttribute="bottom" constant="10" id="Xhd-In-VwB"/>
-                            <constraint firstItem="INw-Gt-oXG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="cvL-XH-zcI"/>
+                            <constraint firstItem="INw-Gt-oXG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="cvL-XH-zcI"/>
                             <constraint firstAttribute="bottom" secondItem="Vd2-Us-kTb" secondAttribute="bottom" id="rVW-wl-p58"/>
                         </constraints>
                     </view>

@@ -24,20 +24,23 @@ class MandelbrotViewController: NSViewController {
     }
 
     @IBAction func didTapMultithreadButton(_ sender: Any) {
-        buttons.forEach { $0.isEnabled = false }
+        enableButtons(false)
 
-        calculate(multithreaded: true) { _ in
-            self.buttons.forEach { $0.isEnabled = true }
+        calculate(multithreaded: true) { [weak self] _ in
+            self?.enableButtons(true)
         }
     }
 
     @IBAction func didTapSingleThreadButton(_ sender: Any) {
-        buttons.forEach { $0.isEnabled = false }
-        calculate(multithreaded: false) { _ in
-            self.buttons.forEach { $0.isEnabled = true }
+        enableButtons(false)
+
+        calculate(multithreaded: false) { [weak self] _ in
+            self?.enableButtons(true)
         }
     }
 }
+
+// MARK: - Calculations
 
 private extension MandelbrotViewController {
     func calculate(multithreaded: Bool, completion: @Sendable @MainActor @escaping (Duration) -> Void) {
@@ -52,21 +55,24 @@ private extension MandelbrotViewController {
         let imaginaryRange = (realMaximum - realMinimum) * Double(view.bounds.height / view.bounds.width)
         mandelbrot(
             multithreaded: multithreaded,
-                   size: size,
-                   scale: scale,
-                   upperLeft: Complex(real: realMinimum, imaginary: imaginaryRange / 2),
+            size: size,
+            scale: scale,
+            upperLeft: Complex(real: realMinimum, imaginary: imaginaryRange / 2),
             lowerRight: Complex(real: realMaximum, imaginary: -imaginaryRange / 2)
         ) { image in
-                    self.imageView.image = image
+            self.imageView.image = image
             let elapsed = start.duration(to: .now)
             self.alert("Completed in \(elapsed).")
-                    completion(elapsed)
+            completion(elapsed)
         }
     }
-
 }
 
 private extension MandelbrotViewController {
+
+    func enableButtons(_ isEnabled: Bool) {
+        buttons.forEach { $0.isEnabled = isEnabled }
+    }
 
     func alert(_ text: String) {
         let alert = NSAlert()

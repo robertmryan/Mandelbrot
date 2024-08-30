@@ -14,7 +14,11 @@ final class Mandelbrot: Sendable {
 
     let maxIterations = 10_000
     let threshold = 2.0
+}
 
+// MARK: - Pixel buffer calculations
+
+extension Mandelbrot {
     /// Calculate Mandelbrot set.
     ///
     /// - Parameters:
@@ -46,7 +50,7 @@ final class Mandelbrot: Sendable {
             ) { range in
                 for index in range {
                     let (row, column) = index.quotientAndRemainder(dividingBy: columns)
-                let imaginary = self.imaginary(for: row, of: rows, between: upperLeft, and: lowerRight)
+                    let imaginary = self.imaginary(for: row, of: rows, between: upperLeft, and: lowerRight)
                     let real = self.real(for: column, of: columns, between: upperLeft, and: lowerRight)
                     let complex = Complex(real: real, imaginary: imaginary)
                     let value = self.value(for: complex)
@@ -102,6 +106,8 @@ final class Mandelbrot: Sendable {
     }
 }
 
+// MARK: - Utility methods
+
 private extension Mandelbrot {
     /// Calculate Mandelbrot value.
     ///
@@ -140,10 +146,11 @@ private extension Mandelbrot {
 
     /// Get imaginary component.
     ///
-    /// - parameter row:        Zero-based row number.
-    /// - parameter rows:       Total number of rows in which the `row` falls.
-    /// - parameter upperLeft:  A `Complex` number representing the upper left of the image.
-    /// - parameter lowerRight: A `Complex` number representing the lower right of the image.
+    /// - Parameters:
+    ///   - row:        Zero-based row number.
+    ///   - rows:       Total number of rows in which the `row` falls.
+    ///   - upperLeft:  A `Complex` number representing the upper left of the image.
+    ///   - lowerRight: A `Complex` number representing the lower right of the image.
     ///
     /// - returns: A `Double` of the imaginary value corresponding this this `row`.
 
@@ -154,15 +161,21 @@ private extension Mandelbrot {
 
     /// Get real component.
     ///
-    /// - parameter column:     Zero-based column number.
-    /// - parameter columns:    Total number of columns in which the `column` fall.
-    /// - parameter upperLeft:  A `Complex` number representing the upper left of the image.
-    /// - parameter lowerRight: A `Complex` number representing the lower right of the image.
+    /// - Parameters:
+    ///   - column:     Zero-based column number.
+    ///   - columns:    Total number of columns in which the `column` fall.
+    ///   - upperLeft:  A `Complex` number representing the upper left of the image.
+    ///   - lowerRight: A `Complex` number representing the lower right of the image.
     ///
     /// - returns: A `Complex` of the value corresponding to this column (and the previously
     ///            calculated imaginary component.
 
-    func real(for column: Int, of columns: Int, between upperLeft: Complex, and lowerRight: Complex) -> Double {
+    func real(
+        for column: Int,
+        of columns: Int,
+        between upperLeft: Complex,
+        and lowerRight: Complex
+    ) -> Double {
         let columnPercent = Double(column) / Double(columns)
         return upperLeft.real + (lowerRight.real - upperLeft.real) * columnPercent
     }
